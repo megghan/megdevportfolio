@@ -1,0 +1,59 @@
+/*  Importação das Fontes (Space Mono e Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Mono:wght@700&display=swap');
+
+/* Diretivas do Tailwind  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+    background-color: #1C1A22 ; 
+    min-height: 100vh;
+    margin: 0;
+}
+
+/*  A Textura (Usando o Pseudo-elemento para não afetar o texto) */
+.main-container {
+    position: relative; /* Referência para o ::before */
+    min-height: 100vh;
+    z-index:10;
+    padding: 50px 60px;
+}
+
+.main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Abaixo do conteúdo */
+    
+    /* Propriedades da textura */
+    background-image: url('/noise.jpg'); 
+    background-repeat: repeat;
+    background-blend-mode: soft-light;
+    //background-size: 100%;
+    opacity: 0.023; /* Opacidade aplicada só na camada da textura */
+}
+
+#cursor-trail {
+    /* Formato e Tamanho */
+    width: 50px; /* Tamanho do rastro. Ajuste a gosto! */
+    height: 50px; 
+    border-radius: 50%; /* Faz dele um círculo */
+
+    /* Efeito de Brilho (O Soft Glow Roxo) */
+    background-color: #DE68FB; /* Sua cor accent-glow */
+    
+    /* Desfoque suave para o efeito 'smoky' */
+    filter: blur(65px); 
+    
+    /* Transição suave para que ele deslize em vez de pular */
+    transition: transform 0.1s ease-out; 
+    
+    /* Garantia de que ele comece no canto superior esquerdo (fora da vista) */
+    transform: translate(-100px, -100px); 
+}
