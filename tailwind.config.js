@@ -1,31 +1,83 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors:{
-        'dark-cement': '#1C1A22',
-        'text-main': '#FEFDFB',
-        'text-secondary': '#F0EFEE',
-
-        'accent-header': '#CEA28A',   // cobre/pessego envelhecido
-        'accent-glow': '#DE68FB',     // roxo magenta vibrante
-      },
-      boxShadow: {
-        'glow-purple': '0 0 15px 5px rgba(222, 104, 251, 0.7), 0 0 5px 1px rgba(222, 104, 251, 0.5)',
-
-      },
-      fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'heading':['Space Mono', 'monospace'],
-      }
-    },
+  	extend: {
+  		colors: {
+  			'dark-cement': '#1C1A22',
+  			'text-main': '#FEFDFB',
+  			'text-secondary': '#F0EFEE',
+  			'accent-header': '#CEA28A',
+  			'accent-glow': '#DE68FB',
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		boxShadow: {
+  			'glow-purple': '0 0 15px 5px rgba(222, 104, 251, 0.7), 0 0 5px 1px rgba(222, 104, 251, 0.5)'
+  		},
+  		fontFamily: {
+  			sans: [
+  				'Inter',
+  				'system-ui',
+  				'sans-serif'
+  			],
+  			heading: [
+  				'Space Mono',
+  				'monospace'
+  			]
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
   plugins: [
     require('@tailwindcss/typography'),
-  ],
+      require("tailwindcss-animate")
+],
 }
 
