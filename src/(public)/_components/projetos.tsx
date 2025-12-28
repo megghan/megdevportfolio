@@ -1,3 +1,5 @@
+
+
 //A INTERFACE
 interface Projeto {
   id: number;
@@ -14,7 +16,7 @@ const MEUS_PROJETOS: Projeto[] = [
     id: 1,
     titulo: "Conecta +",
     subtitulo: "Plataforma de Acessibilidade e Cidades Inteligentes",
-    imagem: "/projetos/CONECTA.jpeg", 
+    imagem: "./projetos/CONECTA.jpeg", 
     tags: ["Next.js","NeonBD", "Prisma ORM","Typescript"],
     link: "https://github.com/megghan/smart-city"
   },
@@ -22,7 +24,7 @@ const MEUS_PROJETOS: Projeto[] = [
     id: 2,
     titulo: "Solaris",
     subtitulo: "Análises estatísticas e gerar insights sobre o desempenho de painéis solares.",
-    imagem: "/projetos/SOLARIS.jpeg",
+    imagem: "./projetos/SOLARIS.jpeg",
     tags: ["React", "Power BI"],
     link: "https://github.com/megghan/Micro-SaaS-Solar"
   }
@@ -45,6 +47,14 @@ function CardProjeto({ projeto }: { projeto: Projeto }) {
       <h3 className="text-2xl font-bold text-white mt-2 italic uppercase">
         {projeto.titulo}
       </h3>
+      <a 
+        href={projeto.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-block mt-4 text-accent-glow hover:text-white transition-colors font-bold"
+      >
+        VER PROJETO →
+      </a>
       <div className="flex flex-wrap gap-2 mt-4">
         {projeto.tags.map(tag => (
           <span key={tag} className="text-[10px] bg-white/10 border border-white/10 px-2 py-1 rounded uppercase text-slate-300">

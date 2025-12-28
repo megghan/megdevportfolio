@@ -24,7 +24,7 @@ export function Hero() {
             Vinda do universo da <span className="text-primary font-semibold">Matemática</span>, troquei as fórmulas abstratas pela construção de soluções reais. Hoje, aplico meu raciocínio analítico para transformar lógica pura em interfaces fluidas e backends eficientes.
             </p>
           
-          <div className="relative group mt-12 overflow-hidden rounded-full p-[2px]">
+          <div className="relative group mt-12 overflow-hidden rounded-full p-0.5">
             {/* A borda animada (o neon que gira) */}
             <div className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#DE68FB_0%,#3b82f6_50%,#DE68FB_100%)] group-hover:animate-[spin_1.5s_linear_infinite]" />
             
@@ -40,7 +40,7 @@ export function Hero() {
 
         {/* IMAGEM CIRCULAR COM NEON 10/10 NO HOVER */}
 <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-  <div className="group relative p-[4px] inline-flex items-center justify-center overflow-hidden rounded-full">
+  <div className="group relative p-1 inline-flex items-center justify-center overflow-hidden rounded-full">
     
     {/* CAMADA DO NEON (Gira em círculo agora) */}
     <div className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] 
@@ -49,12 +49,12 @@ export function Hero() {
     />
 
     {/* CONTAINER DA IMAGEM (Círculo interno) */}
-    <div className="relative rounded-full p-[3px] bg-[#1C1A22] z-10">
+    <div className="relative rounded-full p-0.75 bg-[#1C1A22] z-10">
       <img 
         src="./dev.jpeg" 
         alt="Avatar Megghan" 
         className="relative w-64 h-64 md:w-96 md:h-96 object-cover rounded-full 
-                   grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 shadow-2xl"
+                   grayscale-10 group-hover:grayscale-0 transition-all duration-700 shadow-2xl"
       />
     </div>
     
